@@ -1,0 +1,9 @@
+# cache for current jar dependency. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1373338352000 97524 5f93d7989037af4d33b0a4df0c5fc8c3a4faa2c6 E:\eclipse_workspace2\Android\Android\CommonLib\libs\mustache.jar
+1373338352000 97524 5f93d7989037af4d33b0a4df0c5fc8c3a4faa2c6 E:\eclipse_workspace2\Android\Android\android\libs\mustache.jar
+1373338352000 98859 a60258ce3d38031f3e2ab3afeb38c65f3516fe5a E:\eclipse_workspace2\Android\Android\CommonLib\libs\android-query.0.25.10.jar
+1373276026000 98859 a60258ce3d38031f3e2ab3afeb38c65f3516fe5a E:\eclipse_workspace2\Android\Android\android\libs\android-query.0.25.10.jar
+1373338352000 1891110 0d6f22b1e60a2f1ef99e22c9f5fde270b2088365 E:\eclipse_workspace2\Android\Android\CommonLib\libs\guava-13.0.1.jar
+1373338352000 1891110 0d6f22b1e60a2f1ef99e22c9f5fde270b2088365 E:\eclipse_workspace2\Android\Android\android\libs\guava-13.0.1.jar

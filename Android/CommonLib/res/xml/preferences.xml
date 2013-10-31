@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:icon="@drawable/menu_settings"
+    android:title="@string/app_name" >
+
+    <PreferenceCategory
+        android:key="common"
+        android:title="@string/app_info" >
+        <Preference
+            android:icon="@drawable/menu_pay"
+            android:key="pref_pay"
+            android:title="@string/pref_pay" >
+        </Preference>
+        <Preference
+            android:icon="@drawable/menu_apps"
+            android:key="pref_recommend"
+            android:title="@string/pref_recommend" >
+        </Preference>
+        <Preference
+            android:icon="@drawable/menu_feedback"
+            android:key="pref_feedback"
+            android:title="@string/pref_feedback" >
+        </Preference>
+        <Preference
+            android:icon="@drawable/menu_about"
+            android:key="pref_about"
+            android:title="@string/pref_about" >
+        </Preference>
+        <Preference
+            android:icon="@drawable/menu_share"
+            android:key="pref_share"
+            android:title="@string/pref_share" >
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

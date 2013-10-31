@@ -1,0 +1,7 @@
+.admin-console .list{height:800px;overflow-y: scroll;margin-bottom:20px;}
+.admin-console .map{height:800px;}
+.admin-console .list ul{margin:0px;}
+.admin-console .list li{list-style: none; margin: 5px;height: 120px;}
+.admin-console .list img{width: 100px; height: 100px;float: left; margin-right: 10px;}
+
+  #map-canvas { height: 100% }

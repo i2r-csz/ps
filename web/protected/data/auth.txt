@@ -1,0 +1,40 @@
+<?php
+return array(
+    'member' => array (
+        'type'=>CAuthItem::TYPE_ROLE,
+        'description'=>'',
+        'bizRule'=>'',
+        'data'=>''
+   ),
+
+    'staff' => array (
+        'type'=>CAuthItem::TYPE_ROLE,
+        'description'=>'',
+	'children'=>array(
+		'member',
+	),
+        'bizRule'=>'',
+        'data'=>''
+    ),
+ 
+    'editor' => array (
+        'type'=>CAuthItem::TYPE_ROLE,
+        'description'=>'',
+	'children'=>array(
+		'staff',
+	),
+        'bizRule'=>'',
+        'data'=>''
+    ),
+ 
+    'admin' => array (
+        'type'=>CAuthItem::TYPE_ROLE,
+        'description'=>'',
+        'children'=>array(
+            'editor',
+        ),
+        'bizRule'=>'',
+        'data'=>''
+   )
+);
+?>

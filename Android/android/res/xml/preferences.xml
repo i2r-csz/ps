@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:icon="@drawable/menu_settings"
+    android:title="@string/pref_settings" >
+
+    <PreferenceCategory android:title="@string/pref_category_login" >
+    </PreferenceCategory>
+
+    <Preference
+        android:icon="@drawable/menu_login"
+        android:key="pref_login"
+        android:title="@string/pref_login" >
+    </Preference>
+
+    <PreferenceCategory android:title="@string/pref_category_about" >
+        <Preference
+            android:icon="@drawable/menu_feedback"
+            android:key="pref_feedback"
+            android:title="@string/pref_feedback" >
+        </Preference>
+        <Preference
+            android:icon="@drawable/menu_about"
+            android:key="pref_about"
+            android:title="@string/pref_about" >
+        </Preference>
+        <Preference
+            android:icon="@drawable/menu_share"
+            android:key="pref_share"
+            android:title="@string/pref_share" >
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
