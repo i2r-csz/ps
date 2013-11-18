@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
+import com.eric.common.constants.CommonConstants;
+import com.eric.common.utils.CommonUtils;
 import com.i2r.ps.R;
 import com.i2r.ps.util.Constants;
 import com.i2r.ps.util.Utils;
@@ -61,17 +63,24 @@ public class FeedbackDialog {
 											.getPackageInfo();
 									String packageName = info.packageName;
 									Map<String, Object> params = new HashMap<String, Object>();
-									params.put(
-											Constants.PARAM_PACKAGE_NAME,
+									params.put(Constants.PARAM_PACKAGE_NAME,
 											packageName);
-									params.put(Constants.PARAM_FEED_BACK_CONTENT,
+									params.put(
+											Constants.PARAM_FEED_BACK_CONTENT,
 											feedback);
 									params.put(Constants.PARAM_FEED_BACK_EMAIL,
 											email);
 
+									params.put(
+											Constants.PARAM_FEED_BACK_DEVICE_NAME,
+											CommonUtils.getDeviceName());
+									params.put(
+											Constants.PARAM_FEED_BACK_ANDROID_VERION,
+											CommonUtils.getAndroidVersion());
+
 									aq.ajax(Constants.FEEDBACK_URL
-											+ Constants.PATH_FEEDBACK,
-											params, String.class,
+											+ Constants.PATH_FEEDBACK, params,
+											String.class,
 											new AjaxCallback<String>() {
 												@Override
 												public void callback(

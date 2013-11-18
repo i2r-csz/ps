@@ -38,6 +38,7 @@ public class DbManager {
 			QueryBuilder<Post, Integer> queryBuilder = helper.getPostsDao()
 					.queryBuilder();
 			queryBuilder.orderBy(Post.ID, false);
+			
 			queryBuilder.offset(pgaeNum * Constants.LIMIT_PER_PAGE);
 			queryBuilder.limit(Constants.LIMIT_PER_PAGE);
 			PreparedQuery<Post> preparedQuery = queryBuilder.prepare();
@@ -50,8 +51,10 @@ public class DbManager {
 	}
 
 	public void savePosts(List<Post> posts) throws SQLException {
+		
 		if (posts != null) {
 			for (Post post : posts) {
+				Log.d("dateformat_DbManager",""+post.getCreated_on());
 				helper.getPostsDao().createOrUpdate(post);
 			}
 		}
@@ -70,7 +73,8 @@ public class DbManager {
 		try {
 			QueryBuilder<User, Integer> queryBuilder = helper.getUsersDao()
 					.queryBuilder();
-			queryBuilder.orderBy(User.UID, false);
+			
+			queryBuilder.orderBy(User.CP, false);
 			PreparedQuery<User> preparedQuery = queryBuilder.prepare();
 			users = helper.getUsersDao().query(preparedQuery);
 		} catch (SQLException e) {

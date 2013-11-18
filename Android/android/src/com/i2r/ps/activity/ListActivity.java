@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -95,6 +96,7 @@ public class ListActivity extends Activity {
 		});
 
 		posts = DbManager.getInstance().getPosts(pageNum);
+		
 		updateList();
 	}
 
@@ -103,6 +105,7 @@ public class ListActivity extends Activity {
 
 		for (Post post : posts) {
 			adapter.add(post);
+			
 		}
 		adapter.notifyDataSetChanged();
 	}
@@ -129,14 +132,14 @@ public class ListActivity extends Activity {
 			kvPairs.put(Constants.PARAM_PAGE_NUM, 0 + "");
 			try {
 				String postsStr = HttpService.doPost(url, kvPairs, HTTP.UTF_8);
-
+				
 				GsonBuilder gsonB = new GsonBuilder();
 				gsonB.registerTypeAdapter(Date.class, new DateDeserializer());
 				Gson gson = gsonB.create();
 				Type type = new TypeToken<List<Post>>() {
 				}.getType();
 				List<Post> posts = gson.fromJson(postsStr, type);
-
+				
 				// save
 				DbManager.getInstance().savePosts(posts);
 			} catch (Exception e) {

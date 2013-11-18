@@ -18,10 +18,18 @@
         android:paddingLeft="10dp" >
 
         <TextView
+            android:id="@+id/post_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp" />
+        
+        
+        <TextView
             android:id="@+id/post_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp" />
+            android:layout_below="@+id/post_category"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/post_username"
@@ -36,6 +44,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:textSize="12sp" />
+
+
+
     </RelativeLayout>
 
 </LinearLayout>

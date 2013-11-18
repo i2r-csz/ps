@@ -1,6 +1,9 @@
 package com.i2r.ps.model;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
+
+import android.util.Log;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -10,6 +13,8 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public static final String UID = "uid";
+	public static final String CP = "cp";
+
 
 	@DatabaseField(id = true)
 	private int uid;
@@ -39,6 +44,8 @@ public class User implements Serializable {
 	private String modified_on;
 	@DatabaseField
 	private String created_on;
+	
+	//private String endorsement_state;
 
 	public int getUid() {
 		return uid;
@@ -151,5 +158,66 @@ public class User implements Serializable {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
+	
+	
+	public String getDecimalFormatCP(){
+		//double s=(this.cp*100)/100;
+		double s=this.cp;
+		DecimalFormat df=new DecimalFormat("#.##");
+		String str=df.format(s);
+		
+		//String s = String.valueOf( this.cp );
+		String decimal_format_cp="";
+		if(!str.contains(".")){
+			decimal_format_cp=str+".00";
+		}
+		else if((str.contains("."))&&( str.substring(str.indexOf(".")).length() == 2)){
+			decimal_format_cp=str+"0";
+		}
+		else {
+			decimal_format_cp=str;
+		}
+		
+		//String decimal_format_cp = t.substring(0, t.indexOf(".") + 3);
+		
+		//return decimal_format_cp;
+		return decimal_format_cp;
+		
+		
+		
+	}
+	
+	public String getDecimalFormatEP(){
+		
+		double s=this.ep;
+		DecimalFormat df=new DecimalFormat("#.##");
+		String str=df.format(s);
+		
+		
+		String decimal_format_ep="";
+		if(!str.contains(".")){
+			decimal_format_ep=str+".00";
+		}
+		else if((str.contains("."))&&( str.substring(str.indexOf(".")).length() == 2)){
+			decimal_format_ep=str+"0";
+		}
+		else {
+			decimal_format_ep=str;
+		}
+
+		return decimal_format_ep;
+		
+	
+	}
+
+	/*
+	public String getEndorsementState(){
+		return this.endorsement_state;
+	}
+	
+	public void setEndorsementState(String state){
+		this.endorsement_state=state;
+	}
+	*/
 
 }

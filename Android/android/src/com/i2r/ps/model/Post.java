@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
+import com.i2r.ps.R;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -13,6 +15,7 @@ public class Post implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public static final String ID = "id";
+	
 
 	@DatabaseField(id = true)
 	private long id;
@@ -314,5 +317,33 @@ public class Post implements Serializable {
 	public void setCategory(int category) {
 		this.category = category;
 	}
+	
 
+	
+	public String getCategoryText(int categoryID){
+		String CategoryText="";
+	    switch (categoryID) {
+    	case 0:
+    		CategoryText="Environment";
+    		break; 
+        case 1:
+        	CategoryText="Workspace";
+        	break; 
+        case 2:
+        	CategoryText="Transport";
+        	break; 
+        case 3:
+        	CategoryText="Dengue";
+        	break; 
+        default:
+        	CategoryText="";
+		}
+		return CategoryText;
+	}
+
+	public void setSubmitTime(){
+		Date date = new Date();
+		this.setCreated_on(date);
+		Log.d("setSubmitTime",""+this.getCreated_on());
+	}
 }

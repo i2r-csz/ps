@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,7 @@ import com.i2r.ps.util.HttpService;
 import com.i2r.ps.util.Utils;
 
 public class LeaderBoardActivity extends Activity {
+	private String TAG = "LeaderBoardActivity";
 	List<User> users;
 
 	private AQuery aq;
@@ -63,6 +65,7 @@ public class LeaderBoardActivity extends Activity {
 
 			@Override
 			public View getView(int position, View convertView, ViewGroup parent) {
+				Log.d(TAG, "LeaderBoardActivity");
 				LinearLayout view;
 				if (convertView == null) {
 					view = new LinearLayout(getContext());
@@ -95,11 +98,12 @@ public class LeaderBoardActivity extends Activity {
 				tv1.setText(user.getName());
 				
 				TextView tv3 = (TextView) view.findViewById(R.id.text3);
-				tv3.setText("CP: " + user.getCp());
-
+				//tv3.setText("CP: " + user.getCp());
+				tv3.setText("CP: " + user.getDecimalFormatCP());
+				
 				TextView tv4 = (TextView) view.findViewById(R.id.text4);
-				tv4.setText("EP: " + user.getEp());
-
+				//tv4.setText("EP: " + user.getEp());
+				tv4.setText("EP: " + user.getDecimalFormatEP());
 				return view;
 			}
 		};

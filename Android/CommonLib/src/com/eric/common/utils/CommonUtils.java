@@ -9,8 +9,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Build;
 
-import com.eric.common.cf.CommonCfManager;
-
 /**
  * Common utils
  * 
@@ -21,7 +19,6 @@ public class CommonUtils {
 	private static CommonUtils instance;
 
 	public static CommonUtils init(Context ctx) {
-		CommonCfManager.init(ctx);
 		if (instance == null) {
 			synchronized (CommonUtils.class) {
 				if (instance == null) {
@@ -132,36 +129,5 @@ public class CommonUtils {
 		String androidVersion = "";
 		androidVersion = Build.VERSION.SDK_INT + "";
 		return androidVersion;
-	}
-
-	/**
-	 * Static methods
-	 */
-	public static String getStringBetween(String str, String start, String end) {
-		int startPosition = str.indexOf(start) + start.length();
-		int endPosition = str.indexOf(end, startPosition);
-		String subS = "";
-		if (startPosition != -1 && endPosition != -1) {
-			subS = str.substring(startPosition, endPosition);
-		}
-		return subS;
-	}
-
-	public static double getDoubleBetween(String str, String start, String end) {
-		String ret = getStringBetween(str, start, end);
-		double retD = 0;
-		if (!"".equals(ret)) {
-			retD = Double.parseDouble(ret);
-		}
-		return retD;
-	}
-
-	public static int getIntBetween(String str, String start, String end) {
-		String ret = getStringBetween(str, start, end);
-		int retI = 0;
-		if (!"".equals(ret)) {
-			retI = Integer.parseInt(ret);
-		}
-		return retI;
 	}
 }

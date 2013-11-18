@@ -13,8 +13,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.i2r.ps.model.Post;
+import com.i2r.ps.util.Constants;
 
 public class PostDeserializer implements JsonDeserializer<Post> {
+	private String TAG = "PostDeserializer";
 
 	@Override
 	public Post deserialize(JsonElement ele, Type arg1,
@@ -24,13 +26,15 @@ public class PostDeserializer implements JsonDeserializer<Post> {
 		JsonObject jsonObject = ele.getAsJsonObject();
 		post.setDescription(jsonObject.get("description").getAsString());
 
+		
+		
 		post.setId(jsonObject.get("id").getAsLong());
 		post.setUid(jsonObject.get("uid").getAsInt());
 		post.setImage_file(jsonObject.get("image_file").getAsString());
 
 		try {
 			SimpleDateFormat format = new SimpleDateFormat(
-					"yyyy-mm-dd HH:mm:ss", Locale.ENGLISH);
+					Constants.DATE_FORMAT, Locale.ENGLISH);
 			post.setCreated_on(format.parse(jsonObject.get("created_on")
 					.getAsString()));
 		} catch (ParseException e) {

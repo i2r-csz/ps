@@ -2,6 +2,7 @@ package com.i2r.ps.activity.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +60,13 @@ public class PostItemAdapter extends ArrayAdapter<Post> {
 		Drawable drawable = getContext().getResources().getDrawable(
 				R.drawable.title);
 		drawable.setBounds(0, 0, 32, 32);
+		
+		TextView categoryTv = (TextView) itemView.findViewById(R.id.post_category);
+		int CategoryID=post.getCategory();
+		categoryTv.setText("Category: "+post.getCategoryText(CategoryID));
+		drawable = getContext().getResources().getDrawable(R.drawable.desc);
+		drawable.setBounds(0, 0, 32, 32);
+		categoryTv.setCompoundDrawables(drawable, null, null, null);
 
 		TextView descTv = (TextView) itemView.findViewById(R.id.post_desc);
 		descTv.setText(post.getDescription());
@@ -68,6 +76,7 @@ public class PostItemAdapter extends ArrayAdapter<Post> {
 
 		TextView unTv = (TextView) itemView.findViewById(R.id.post_username);
 		unTv.setText(post.getUsername());
+		Log.d("User_name",""+post.getUsername());
 		drawable = getContext().getResources().getDrawable(R.drawable.user);
 		drawable.setBounds(0, 0, 32, 32);
 		unTv.setCompoundDrawables(drawable, null, null, null);

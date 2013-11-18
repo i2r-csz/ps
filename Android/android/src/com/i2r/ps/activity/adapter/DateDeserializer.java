@@ -12,6 +12,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
+import com.i2r.ps.util.Constants;
 
 public class DateDeserializer implements JsonDeserializer<Date> {
 
@@ -21,7 +22,7 @@ public class DateDeserializer implements JsonDeserializer<Date> {
 		// "2013-06-19 11:05:55"
 		Date date = null;
 		try {
-			date = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss", Locale.ENGLISH)
+			date = new SimpleDateFormat(Constants.DATE_FORMAT, Locale.ENGLISH)
 					.parse(ele.getAsString());
 		} catch (ParseException e) {
 			Log.e(DateDeserializer.class.getName(), e.getMessage());

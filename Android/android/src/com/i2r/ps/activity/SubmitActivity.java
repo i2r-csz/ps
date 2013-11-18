@@ -119,7 +119,6 @@ public class SubmitActivity extends FragmentActivity {
 		categorySpin = (Spinner) findViewById(R.id.category_spin);
 		locationEt = (EditText) findViewById(R.id.location_et);
 		
-	
 
 		
 
@@ -127,11 +126,16 @@ public class SubmitActivity extends FragmentActivity {
 			@Override
 			public void onItemSelected(AdapterView<?> parentView,
 					View selectedItemView, int position, long id) {
+				
 				if (position == 1) {
 					locationEt.setVisibility(View.VISIBLE);
+					
 				} else {
 					locationEt.setVisibility(View.GONE);
 				}
+				
+				update_category_selection();
+				
 			}
 
 			@Override
@@ -172,16 +176,21 @@ public class SubmitActivity extends FragmentActivity {
 
 		lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-		// if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+		if (lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,
-				locationListener);
-		// } else if (lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+		locationListener);
+		}
+
+		if (lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
 		lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0,
-				locationListener);
+		locationListener);
 		// showGPSEnableDialog();
-		// } else {
-		// // error dialog.
-		// }
+		}
+
+		
+		
+		
+		
 
 		Log.i(TAG, "onCreate End");
 	}
@@ -207,6 +216,9 @@ public class SubmitActivity extends FragmentActivity {
 		super.onResume();
 		Log.i(TAG, "onResume Start");
 		detectLocation();
+		
+		update_category_selection();
+
 
 		if (CfManager.getInstantce().getUid() < 0) {
 			Toast.makeText(this, R.string.error_login_first, Toast.LENGTH_SHORT)
@@ -221,6 +233,9 @@ public class SubmitActivity extends FragmentActivity {
 	protected void onPause() {
 		super.onPause();
 		Log.i(TAG, "onPause Start");
+		
+		update_category_selection();
+				
 		lm.removeUpdates(locationListener);
 		/*
 		if (image != null) {
@@ -290,6 +305,8 @@ public class SubmitActivity extends FragmentActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.i(TAG, "onActivityResult Start" + requestCode);
 
+		update_category_selection();
+		
 		if (resultCode == RESULT_OK) {
 			if (requestCode == CAMERA_PIC_REQUEST && data != null) {
 				// image = Utils.getInstantce().readBitmap(outputFileUri);
@@ -353,6 +370,7 @@ public class SubmitActivity extends FragmentActivity {
 
 	public void onSubmit(View v) {
 		
+		update_category_selection();
 		
 		if (CfManager.getInstantce().getUid() < 0) {
 			Toast.makeText(this, R.string.error_login_first, Toast.LENGTH_SHORT)
@@ -376,9 +394,13 @@ public class SubmitActivity extends FragmentActivity {
 			post.setLat(curLocation.getLatitude());
 			post.setLng(curLocation.getLongitude());
 			post.setCategory(categorySpin.getSelectedItemPosition());
+			post.setSubmitTime();
+			Log.i(TAG,"category_id (onSubmit)="+categorySpin.getSelectedItemPosition());
 			if (locationEt.getText() != null) {
 				post.setAddress(locationEt.getText().toString());
 			}
+			
+			Log.d("User_name","(onSubmit)"+post.getUsername());
 
 			new SendPostTask().execute(new Post[] { post });
 		} else {
@@ -413,6 +435,14 @@ public class SubmitActivity extends FragmentActivity {
 		return valid;
 	}
 
+	private void update_category_selection(){
+		int category_id=categorySpin.getSelectedItemPosition();
+		categorySpin.setSelection(category_id);
+		Log.i(TAG,"category_id (update_category_selection)="+category_id);
+		
+	}
+	
+	
 	class SendPostTask extends AsyncTask<Post, Void, Boolean> {
 
 		@Override

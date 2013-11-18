@@ -15,6 +15,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -23,6 +24,7 @@ import com.i2r.ps.db.DbManager;
 import com.i2r.ps.model.Post;
 
 public class PostService {
+	
 
 	//
 	public static boolean sendPost(Post post) throws ClientProtocolException,
@@ -75,6 +77,7 @@ public class PostService {
 			Gson gson = gsonB.create();
 			try {
 				Post dbPost = gson.fromJson(result, Post.class);
+				
 				if (dbPost != null) {
 					DbManager.getInstance().savePosts(dbPost);
 					isSuccess = true;
