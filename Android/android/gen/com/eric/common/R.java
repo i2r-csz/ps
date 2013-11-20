@@ -8,23 +8,23 @@ package com.eric.common;
 
 public final class R {
 	public static final class dimen {
-		public static final int activity_horizontal_margin = 0x7f0a0005;
-		public static final int activity_vertical_margin = 0x7f0a0006;
+		public static final int activity_horizontal_margin = 0x7f080005;
+		public static final int activity_vertical_margin = 0x7f080006;
 	}
 	public static final class drawable {
-		public static final int menu_about = 0x7f020031;
-		public static final int menu_apps = 0x7f020032;
-		public static final int menu_feedback = 0x7f020033;
-		public static final int menu_pay = 0x7f020035;
-		public static final int menu_settings = 0x7f020036;
-		public static final int menu_share = 0x7f020037;
+		public static final int menu_about = 0x7f020030;
+		public static final int menu_apps = 0x7f020031;
+		public static final int menu_feedback = 0x7f020032;
+		public static final int menu_pay = 0x7f020034;
+		public static final int menu_settings = 0x7f020035;
+		public static final int menu_share = 0x7f020036;
 	}
 	public static final class id {
-		public static final int activity_bar = 0x7f080020;
-		public static final int activity_frame = 0x7f080021;
-		public static final int app_description = 0x7f080025;
-		public static final int app_name = 0x7f080024;
-		public static final int app_thumb = 0x7f080023;
+		public static final int activity_bar = 0x7f07001f;
+		public static final int activity_frame = 0x7f070020;
+		public static final int app_description = 0x7f070024;
+		public static final int app_name = 0x7f070023;
+		public static final int app_thumb = 0x7f070022;
 	}
 	public static final class integer {
 		public static final int group_id = 0x7f0b0000;

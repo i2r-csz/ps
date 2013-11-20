@@ -138,6 +138,7 @@ public class PostActivity extends FragmentActivity {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
 	    	case android.R.id.home:
+	    		onBackPressed();
 	    		return true;
 	        case R.id.action_thumb_up:
 	        	//increase votes;
@@ -152,6 +153,7 @@ public class PostActivity extends FragmentActivity {
 	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
+	        	
 	        	
 	    }
 		

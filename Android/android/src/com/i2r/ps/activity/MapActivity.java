@@ -17,9 +17,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -55,6 +57,13 @@ public class MapActivity extends FragmentActivity {
 
 		footerLl = (LinearLayout) findViewById(R.id.footer_ll);
 
+		try {
+			MapsInitializer.initialize(this);
+		} catch (GooglePlayServicesNotAvailableException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// default location
 		mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
 				Constants.MAP_DEFAULT_LAT, Constants.MAP_DEFAULT_LNG),

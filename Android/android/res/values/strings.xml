@@ -83,7 +83,7 @@
      <!-- 
      <string name="request_to_endorse">Request to endorse him/her</string>
      -->
-     <string name="request_to_endorse">Endorse him/her</string>
+     <string name="request_to_endorse">Req. to endorse</string>
      
      <!-- outgoing state 1:  -->
      <string name="requested_to_endorse">Requested to endorse</string>
@@ -102,7 +102,7 @@
      <!-- 
      <string name="request_for_endorsement">Request to be endorsed by him/her</string>
      -->
-     <string name="request_for_endorsement">Be endorsed by him/her</string>
+     <string name="request_for_endorsement">Req. to be endorsed</string>
      <string name="requested_for_endorsement">Requested for help</string>
      <string name="accept_endorsement">Accept endorsement?</string>
      <string name="endorsed_by_this_user">Endorsed by this user</string>
