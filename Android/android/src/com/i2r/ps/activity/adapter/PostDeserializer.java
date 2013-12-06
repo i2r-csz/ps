@@ -16,7 +16,6 @@ import com.i2r.ps.model.Post;
 import com.i2r.ps.util.Constants;
 
 public class PostDeserializer implements JsonDeserializer<Post> {
-	private String TAG = "PostDeserializer";
 
 	@Override
 	public Post deserialize(JsonElement ele, Type arg1,

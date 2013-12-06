@@ -1,17 +1,12 @@
 package com.i2r.ps.activity;
 
-import java.lang.reflect.Type;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -27,17 +22,10 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.callback.ImageOptions;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import com.i2r.ps.R;
-import com.i2r.ps.activity.adapter.DateDeserializer;
-import com.i2r.ps.db.DbManager;
-import com.i2r.ps.model.Post;
 import com.i2r.ps.model.User;
 import com.i2r.ps.util.CfManager;
 import com.i2r.ps.util.Constants;
-import com.i2r.ps.util.HttpService;
 import com.i2r.ps.util.Utils;
 
 public class UserActivity extends FragmentActivity {

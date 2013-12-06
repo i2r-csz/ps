@@ -60,32 +60,44 @@ public class PostItemAdapter extends ArrayAdapter<Post> {
 		Drawable drawable = getContext().getResources().getDrawable(
 				R.drawable.title);
 		drawable.setBounds(0, 0, 32, 32);
-		
-		TextView categoryTv = (TextView) itemView.findViewById(R.id.post_category);
-		int CategoryID=post.getCategory();
-		categoryTv.setText("Category: "+post.getCategoryText(CategoryID));
-		drawable = getContext().getResources().getDrawable(R.drawable.desc);
+
+		TextView categoryTv = (TextView) itemView
+				.findViewById(R.id.post_category);
+		int CategoryID = post.getCategory();
+		categoryTv.setText(post.getCategoryText(CategoryID));
+		drawable = getContext().getResources().getDrawable(
+				R.drawable.post_title);
 		drawable.setBounds(0, 0, 32, 32);
 		categoryTv.setCompoundDrawables(drawable, null, null, null);
+		categoryTv.setCompoundDrawablePadding(10);
 
 		TextView descTv = (TextView) itemView.findViewById(R.id.post_desc);
 		descTv.setText(post.getDescription());
-		drawable = getContext().getResources().getDrawable(R.drawable.desc);
+		drawable = getContext().getResources()
+				.getDrawable(R.drawable.post_desc);
 		drawable.setBounds(0, 0, 32, 32);
 		descTv.setCompoundDrawables(drawable, null, null, null);
+		descTv.setCompoundDrawablePadding(10);
+
 
 		TextView unTv = (TextView) itemView.findViewById(R.id.post_username);
 		unTv.setText(post.getUsername());
-		Log.d("User_name",""+post.getUsername());
-		drawable = getContext().getResources().getDrawable(R.drawable.user);
+		Log.d("User_name", "" + post.getUsername());
+		drawable = getContext().getResources()
+				.getDrawable(R.drawable.post_user);
 		drawable.setBounds(0, 0, 32, 32);
 		unTv.setCompoundDrawables(drawable, null, null, null);
+		unTv.setCompoundDrawablePadding(10);
+
 
 		TextView dateTv = (TextView) itemView.findViewById(R.id.post_date);
 		dateTv.setText(Utils.formatDate(post.getCreated_on()));
-		drawable = getContext().getResources().getDrawable(R.drawable.date);
+		drawable = getContext().getResources()
+				.getDrawable(R.drawable.post_date);
 		drawable.setBounds(0, 0, 32, 32);
 		dateTv.setCompoundDrawables(drawable, null, null, null);
+		dateTv.setCompoundDrawablePadding(10);
+
 
 		return itemView;
 	}

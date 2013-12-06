@@ -4,13 +4,17 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+    <style name="AppBaseTheme" parent="Theme.Yellow">
         <!-- API 11 theme customizations can go here. -->
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
+
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:textColor">#ff8800</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:actionBarStyle">@style/myTheme.ActionBar</item>
     </style>
 
     <style name="btnStyleGenoa" parent="@android:style/Widget.Button">
@@ -28,6 +32,14 @@
 
     <style name="spinnerStyle" parent="@android:style/Widget.TextView.SpinnerItem">
         <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="myTheme.ActionBar" parent="@style/ActionBar.Solid.Yellow">
+        <item name="android:titleTextStyle">@style/myTheme.ActionBar.Text</item>
+    </style>
+
+    <style name="myTheme.ActionBar.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#ffffff</item>
     </style>
 
 </resources>

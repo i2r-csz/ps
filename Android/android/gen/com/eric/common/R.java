@@ -12,12 +12,12 @@ public final class R {
 		public static final int activity_vertical_margin = 0x7f080006;
 	}
 	public static final class drawable {
-		public static final int menu_about = 0x7f020030;
-		public static final int menu_apps = 0x7f020031;
-		public static final int menu_feedback = 0x7f020032;
-		public static final int menu_pay = 0x7f020034;
-		public static final int menu_settings = 0x7f020035;
-		public static final int menu_share = 0x7f020036;
+		public static final int menu_about = 0x7f020043;
+		public static final int menu_apps = 0x7f020045;
+		public static final int menu_feedback = 0x7f02004c;
+		public static final int menu_pay = 0x7f02004f;
+		public static final int menu_settings = 0x7f020050;
+		public static final int menu_share = 0x7f020051;
 	}
 	public static final class id {
 		public static final int activity_bar = 0x7f07001f;
@@ -27,7 +27,7 @@ public final class R {
 		public static final int app_thumb = 0x7f070022;
 	}
 	public static final class integer {
-		public static final int group_id = 0x7f0b0000;
+		public static final int group_id = 0x7f0b0001;
 	}
 	public static final class layout {
 		public static final int activity_apps_feedback = 0x7f030000;
@@ -43,24 +43,24 @@ public final class R {
 		public static final int about_ss = 0x7f060001;
 	}
 	public static final class string {
-		public static final int app_info = 0x7f090027;
-		public static final int app_name = 0x7f09001b;
-		public static final int email = 0x7f090026;
-		public static final int is_for_samsung = 0x7f09001c;
-		public static final int paid_user = 0x7f09001f;
-		public static final int pref__about = 0x7f090021;
-		public static final int pref_about = 0x7f090025;
-		public static final int pref_feedback = 0x7f090020;
-		public static final int pref_pay = 0x7f090022;
-		public static final int pref_recommend = 0x7f090023;
-		public static final int pref_share = 0x7f090024;
-		public static final int sku_adv = 0x7f09001e;
-		public static final int str_base_64_encoded_public_key = 0x7f09001d;
-		public static final int str_plz_fill_all = 0x7f090029;
-		public static final int str_restart_app = 0x7f09002a;
-		public static final int str_thanks = 0x7f09002c;
-		public static final int str_thanks_for_feedback = 0x7f090028;
-		public static final int str_twice_to_exit = 0x7f09002b;
+		public static final int app_info = 0x7f09002c;
+		public static final int app_name = 0x7f090020;
+		public static final int email = 0x7f09002b;
+		public static final int is_for_samsung = 0x7f090021;
+		public static final int paid_user = 0x7f090024;
+		public static final int pref__about = 0x7f090026;
+		public static final int pref_about = 0x7f09002a;
+		public static final int pref_feedback = 0x7f090025;
+		public static final int pref_pay = 0x7f090027;
+		public static final int pref_recommend = 0x7f090028;
+		public static final int pref_share = 0x7f090029;
+		public static final int sku_adv = 0x7f090023;
+		public static final int str_base_64_encoded_public_key = 0x7f090022;
+		public static final int str_plz_fill_all = 0x7f09002e;
+		public static final int str_restart_app = 0x7f09002f;
+		public static final int str_thanks = 0x7f090031;
+		public static final int str_thanks_for_feedback = 0x7f09002d;
+		public static final int str_twice_to_exit = 0x7f090030;
 	}
 	public static final class style {
 		public static final int AppBaseTheme = 0x7f0c0000;

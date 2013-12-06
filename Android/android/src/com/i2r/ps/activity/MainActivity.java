@@ -41,11 +41,11 @@ public class MainActivity extends TabActivity {
 
 		intent = new Intent().setClass(this, SubmitActivity.class);
 		setupTab(new TextView(this), getText(R.string.submit),
-				R.drawable.camera, intent);
+				R.drawable.submit, intent);
 
 		intent = new Intent().setClass(this, LeaderBoardActivity.class);
 		setupTab(new TextView(this), getText(R.string.leader_board),
-				R.drawable.list, intent);
+				R.drawable.leader_board, intent);
 
 		intent = new Intent().setClass(this, SettingsActivtiy.class);
 		setupTab(new TextView(this), getText(R.string.settings),

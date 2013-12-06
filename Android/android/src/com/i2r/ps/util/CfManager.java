@@ -1,17 +1,9 @@
 package com.i2r.ps.util;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import com.androidquery.callback.AjaxCallback;
-import com.androidquery.callback.AjaxStatus;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.Toast;
 
 public class CfManager {
 	public static final String PREF_UID = "PREF_UID";

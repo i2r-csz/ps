@@ -29,20 +29,17 @@
             android:title="@string/pref_share" >
         </Preference>
     </PreferenceCategory>
-    
- 	<PreferenceCategory android:title="@string/pref_category_endorsement" >
+    <PreferenceCategory android:title="@string/pref_category_endorsement" >
         <Preference
-            android:icon="@drawable/menu_about"
+            android:icon="@drawable/menu_up"
             android:key="pref_endorsement_requests"
-            android:title="@string/pref_endorsement_request">
+            android:title="@string/pref_endorsement_request" >
         </Preference>
-        
         <Preference
-            android:icon="@drawable/menu_about"
+            android:icon="@drawable/menu_down"
             android:key="pref_endorsing_requests"
-            android:title="@string/pref_endorsing_requests">
+            android:title="@string/pref_endorsing_requests" >
         </Preference>
-        
     </PreferenceCategory>
 
 </PreferenceScreen>

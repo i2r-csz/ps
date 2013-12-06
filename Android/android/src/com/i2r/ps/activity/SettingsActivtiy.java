@@ -1,12 +1,5 @@
 package com.i2r.ps.activity;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
@@ -14,19 +7,13 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
-import android.util.Log;
-import android.view.Gravity;
-import android.widget.Toast;
 
 import com.androidquery.AQuery;
-import com.androidquery.callback.AjaxCallback;
-import com.androidquery.callback.AjaxStatus;
 import com.i2r.ps.R;
 import com.i2r.ps.activity.dialog.AboutDialog;
 import com.i2r.ps.activity.dialog.FeedbackDialog;
 import com.i2r.ps.activity.dialog.LoginDialog;
 import com.i2r.ps.activity.dialog.ShareDialog;
-import com.i2r.ps.model.User;
 import com.i2r.ps.util.CfManager;
 import com.i2r.ps.util.Constants;
 
